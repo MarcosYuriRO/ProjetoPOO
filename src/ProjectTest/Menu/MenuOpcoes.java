@@ -22,7 +22,9 @@ public class MenuOpcoes {
                         O que avaliar em cada documento?
                             Documentos Obrigatórios para todas Nacionalidades:
                             - Identidade:
-                              
+                              - Checar validade;
+                              - Checar o nome dito com o nome documentado;
+                              -
                         
                         
                         """);
