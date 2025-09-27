@@ -107,6 +107,3 @@ public class GeradorDeImigrantes {
             return new Imigrante(nomeSorteado, paisSorteado, documentos, deveSerAceito);
         }
 }
-
-
-
