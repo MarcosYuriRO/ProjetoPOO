@@ -1,43 +1,39 @@
 package ProjectTest.Documentos;
 
-import ProjectTest.Imigrantes.Imigrante;
-
 import java.time.LocalDate;
 
 public class Identidade extends Documento{
+    //Atributos
     private LocalDate dataNascimento;
+    private int numeroRG;
 
-    public Identidade(String nomeCompleto, LocalDate validade, LocalDate dataNascimento) {
-        super(nomeCompleto, validade);
+    //Construtor
+    public Identidade(String nomeCompleto, LocalDate validade, LocalDate dataNascimento, int numeroRG) {
+        super(nomeCompleto, validade, "identidade");
         this.dataNascimento = dataNascimento;
+        this.numeroRG = numeroRG;
     }
 
-
-    //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
-    @Override
-    public boolean verificarLegalidade(Imigrante dadosImigrante) {
-        if(estaValido() && dadosImigrante.getNome().equals(getNomeCompleto()) && dadosImigrante.getIdade() == calcularIdade()){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-    //Diminui o ano atual, pelo ano de nascimento presente na identidade, resultando na idade
-    public int calcularIdade(){
-        return LocalDate.now().getYear() - getDataNascimento().getYear();
-    }
-
-
-
-
+    //Getters
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
+    public int getNumeroRG() { return numeroRG; }
 
+    //Metodo obrigatorio herdado da super Documento
     @Override
-    public void exibirDocumentos() {
+    public void exibirDetalhes() {
 
+        //$-20S EQUIVALE AQUELE %S SÓ QUE COM O AJUSTE DE 20 CARACTERES PRA FICAR FOFINHO E N MUDAR A FORMATAÇÃO
+        System.out.printf("""
+                =======================================================
+                |       🌟 ID CARD | CARTEIRA DE IDENTIDADE 🌟        |
+                =======================================================
+                | 📝 NOME COMPLETO:  %-20s           ------------     |
+                | 👶 NASCIMENTO:  %-20s              |   FACE   |     |
+                | 🔢 NÚMERO RG:  %-20d               |    ID    |     |
+                | ♾️ VALIDADE:  %-20s                ------------     |
+                =======================================================
+                """, getNomeCompleto(), dataNascimento, numeroRG, getDataValidade());
     }
 }
