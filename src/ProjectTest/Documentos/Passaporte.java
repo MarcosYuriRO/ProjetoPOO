@@ -15,10 +15,11 @@ public class Passaporte extends Documento{
         this.paisDeOrigem = paisDeOrigem;
     }
 
+    boolean contemAno = numeroDoPassaporte.contains("2025");
 
     @Override
     public boolean verificarLegalidade(Imigrante dadosImigrante) {
-        if(dadosImigrante.getNacionalidadeReal().equals(getPaisDeOrigem())){
+        if(dadosImigrante.getNacionalidadeReal().equals(getPaisDeOrigem()) && dadosImigrante.getNome().equals(getNomeCompleto()) && contemAno){
             return true;
         } else {
             return false;
