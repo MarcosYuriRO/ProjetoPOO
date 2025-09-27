@@ -48,6 +48,22 @@ public class Imigrante {
         System.out.println("Olá, meu nome é " + nome + "e sou de " + nacionalidadeReal + ".");
     }
 
-    public Documento getDocumentoPorTipo(String tipo)
+    public Documento getDocumentoPorTipo(String tipo) {
+        for (Documento doc : documentos) {
+            if (doc.getTipo().equalsIgnoreCase(tipo)) {
+                return doc;
+            }
+        }
+        //Se o loop terminar e não tiver nenhum doc, retorna Null
+        return null;
+    }
+
+    public void mostrarIntroducao() {
+        System.out.println("""
+               <<<<<< NOVO IMIGRANTE >>>>>>>
+               """);
+        System.out.println("Cidadão: " + nome + " | Nacionalidade Declarada: " + nacionalidadeReal);
+    }
+
 
 }
