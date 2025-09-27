@@ -1,14 +1,10 @@
 package ProjectTest;
 
-import ProjectTest.Controle.MenuOpcoes;
-import ProjectTest.Documentos.Identidade;
-import ProjectTest.Imigrantes.Imigrante;
-
-import java.time.LocalDate;
+import ProjectTest.Controle.Jogo;
 
 public class MainTest {
     public static void main(String[] args) {
-        MenuOpcoes menu = new MenuOpcoes();
+        Jogo menu = new Jogo();
         System.out.println("""
                 Você inicia mais uma rotina de trabalho. Ao entrar em sua cabine
                 e organizar sua mesa, você clica o alarme para a análise do primeiro imigrante
@@ -18,7 +14,7 @@ public class MainTest {
 
 
         //TESTE:
-        menu.opcoes();
+        menu.menu();
 
 
     }

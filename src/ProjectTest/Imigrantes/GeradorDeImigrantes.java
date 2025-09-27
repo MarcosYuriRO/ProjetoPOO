@@ -1,5 +1,12 @@
 package ProjectTest.Imigrantes;
 
+import ProjectTest.Documentos.Documento;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class GeradorDeImigrantes {
     package ProjectTest.Imigrantes;
 
