@@ -2,7 +2,6 @@ package ProjectTest.Imigrantes;
 
 import ProjectTest.Documentos.Documento;
 
-import javax.swing.text.html.parser.DocumentParser;
 import java.util.List;
 
 public class Imigrante {
@@ -10,45 +9,38 @@ public class Imigrante {
     private String nome;
     private String nacionalidadeReal; //A real naciolidade pra comparar
     private List<Documento> documentos; //Lista de docs gerados
-    private Decisao decisaoCorreta; //A decisão correta/resposta certa
+    private boolean decisaoCorreta; //A decisão correta/resposta certa
 
-    //Construtor
-    public Imigrante(String nome, String nacionalidadeReal, List<Documento> documentos, Decisao decisaoCorreta) {
+    //Construtores
+    public Imigrante(String nome, String nacionalidadeReal, List<Documento> documentos, boolean decisaoCorreta) {
         this.nome = nome;
         this.nacionalidadeReal = nacionalidadeReal;
         this.documentos = documentos;
         this.decisaoCorreta = decisaoCorreta;
     }
 
-    //Getter and setters
+    //Getters
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-
     public String getNacionalidadeReal() {
         return nacionalidadeReal;
     }
-    public void setNacionalidadeReal(String nacionalidadeReal) {
-        this.nacionalidadeReal = nacionalidadeReal;
+    public List<Documento> getDocumentos() {
+        return documentos;
     }
-
-    public Decisao isDecisaoCorreta() {
+    public boolean isDecisaoCorreta() {
         return decisaoCorreta;
     }
-    public void setImigranteLegal(Decisao decisaoCorreta) {
-        this.decisaoCorreta = decisaoCorreta;
-    }
+
 
     //Métodos
     public void dialogo() {
-        System.out.println("Olá, meu nome é " + nome + "e sou de " + nacionalidadeReal + ".");
+        System.out.println("Olá, meu nome é " + nome + " e sou de " + nacionalidadeReal + ".");
     }
 
     public Documento getDocumentoPorTipo(String tipo) {
+        //For-each pra procurar por tipo na lista de documentos se tem um documento
         for (Documento doc : documentos) {
             if (doc.getTipo().equalsIgnoreCase(tipo)) {
                 return doc;
@@ -58,12 +50,8 @@ public class Imigrante {
         return null;
     }
 
-    public void mostrarIntroducao() {
-        System.out.println("""
-               <<<<<< NOVO IMIGRANTE >>>>>>>
-               """);
-        System.out.println("Cidadão: " + nome + " | Nacionalidade Declarada: " + nacionalidadeReal);
+    @Override
+    public String toString() {
+        return "Imigrante: " + nome + " |  Documentos: " + documentos + "|  Nacionalidade Declarada: " + nacionalidadeReal + " | Decisão correta: " + decisaoCorreta;
     }
-
-
 }

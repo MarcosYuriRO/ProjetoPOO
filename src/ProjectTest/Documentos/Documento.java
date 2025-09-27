@@ -1,7 +1,5 @@
 package ProjectTest.Documentos;
 
-import ProjectTest.Imigrantes.Imigrante;
-
 import java.time.LocalDate;
 
 public abstract class Documento {
@@ -26,7 +24,7 @@ public abstract class Documento {
     }
 
     //Metodo abstrato que exibe os docs
-    public abstract void exibirDetalhes();
+    public abstract String exibirDetalhes();
 
     //Todos documentos devem ter este metodo, mas ele varia a cada subclasse devido seus diferentes atributos
 

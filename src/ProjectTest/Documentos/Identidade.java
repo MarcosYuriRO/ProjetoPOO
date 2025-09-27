@@ -22,7 +22,7 @@ public class Identidade extends Documento{
 
     //Metodo obrigatorio herdado da super Documento
     @Override
-    public void exibirDetalhes() {
+    public String exibirDetalhes() {
 
         //$-20S EQUIVALE AQUELE %S SÓ QUE COM O AJUSTE DE 20 CARACTERES PRA FICAR FOFINHO E N MUDAR A FORMATAÇÃO
         System.out.printf("""
@@ -35,5 +35,10 @@ public class Identidade extends Documento{
                 | ♾️ VALIDADE:  %-20s                ------------     |
                 =======================================================
                 """, getNomeCompleto(), dataNascimento, numeroRG, getDataValidade());
+        return null;
+    }
+
+    public String toString() {
+        return exibirDetalhes();
     }
 }

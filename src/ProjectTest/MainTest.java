@@ -1,6 +1,10 @@
 package ProjectTest;
 
 import ProjectTest.Controle.Jogo;
+import ProjectTest.Imigrantes.GeradorDeImigrantes;
+import ProjectTest.Imigrantes.Imigrante;
+
+import java.time.LocalDate;
 
 public class MainTest {
     public static void main(String[] args) {
@@ -14,8 +18,9 @@ public class MainTest {
 
 
         //TESTE:
-        menu.menu();
+        //menu.menu();
 
+        System.out.println("Gerando imigrante: " + GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.of(1982, 11, 23)));
 
     }
 }

@@ -24,7 +24,8 @@ public class Passaporte extends Documento{
 
     //Metodo obrigatorio herdado da super Documento
     @Override
-    public void exibirDetalhes() {
+    public String exibirDetalhes() {
+        //$-20S EQUIVALE AQUELE %S SÓ QUE COM O AJUSTE DE 18 CARACTERES PRA FICAR FOFINHO E N MUDAR A FORMATAÇÃO
         System.out.printf("""
                 =======================================================
                 |            ✈️ PASSAPORTE DE VIAGEM ✈️               |
@@ -38,6 +39,11 @@ public class Passaporte extends Documento{
                 =======================================================
                 """, paisDeOrigem, getNomeCompleto(), numeroDoPassaporte, getDataValidade());
 
+        return null;
+    }
+
+    public String toString() {
+        return exibirDetalhes();
     }
 }
 
