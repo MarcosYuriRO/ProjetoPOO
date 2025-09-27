@@ -21,7 +21,7 @@ public class MainTest {
 
         //Após isso, já pode haver um metodo de exibição/introdução do imigrante junto de uma lista de ações
 
-        Imigrante imigrante1 = new Imigrante("Kai", 20, "Brasileira");
+        Imigrante imigrante1 = new Imigrante("Kai", "Brasileira");
 
         Identidade identidade1 = new Identidade("Kai", LocalDate.of(2027, 07,24), LocalDate.of(2004, 12, 14));
 

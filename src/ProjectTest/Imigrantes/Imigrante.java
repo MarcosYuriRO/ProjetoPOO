@@ -1,71 +1,53 @@
 package ProjectTest.Imigrantes;
 
-import ProjectTest.Documentos.Identidade;
+import ProjectTest.Documentos.Documento;
+
+import javax.swing.text.html.parser.DocumentParser;
+import java.util.List;
 
 public class Imigrante {
+    //Atributos essenciais de um Imigrante
     private String nome;
-    private int idade;
-    private String nacionalidade;
-    private boolean imigranteLegal;
+    private String nacionalidadeReal; //A real naciolidade pra comparar
+    private List<Documento> documentos; //Lista de docs gerados
+    private Decisao decisaoCorreta; //A decisão correta/resposta certa
 
-    public Imigrante(String nome, int idade, String nacionalidade) {
-        this.setNome(nome);
-        this.setIdade(idade);
-        this.setNacionalidade(nacionalidade);
+    //Construtor
+    public Imigrante(String nome, String nacionalidadeReal, List<Documento> documentos, Decisao decisaoCorreta) {
+        this.nome = nome;
+        this.nacionalidadeReal = nacionalidadeReal;
+        this.documentos = documentos;
+        this.decisaoCorreta = decisaoCorreta;
     }
 
-
-
-    public void dialogo() {
-        System.out.println("Olá, meu nome é " + nome +
-                ", tenho " + idade + " anos " +
-                "e sou de " + nacionalidade + ".");
-    }
-
-
-    public boolean verificarLegalidade() {
-        return imigranteLegal;
-    }
-
-
-    public void verificarRegras() {
-        if (idade < 18) {
-            System.out.println("ATENÇÃO: O imigrante " + nome + " tem apenas " + idade +
-                    " anos. Menores de idade não são aceitos.");
-            System.out.println("Fim da imigração");
-            System.exit(1);
-        }
-    }
-
-
+    //Getter and setters
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+
+    public String getNacionalidadeReal() {
+        return nacionalidadeReal;
     }
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setNacionalidadeReal(String nacionalidadeReal) {
+        this.nacionalidadeReal = nacionalidadeReal;
     }
 
-    public String getNacionalidade() {
-        return nacionalidade;
+    public Decisao isDecisaoCorreta() {
+        return decisaoCorreta;
+    }
+    public void setImigranteLegal(Decisao decisaoCorreta) {
+        this.decisaoCorreta = decisaoCorreta;
     }
 
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
+    //Métodos
+    public void dialogo() {
+        System.out.println("Olá, meu nome é " + nome + "e sou de " + nacionalidadeReal + ".");
     }
 
-    public boolean isImigranteLegal() {
-        return imigranteLegal;
-    }
+    public Documento getDocumentoPorTipo(String tipo)
 
-    public void setImigranteLegal(boolean imigranteLegal) {
-        this.imigranteLegal = imigranteLegal;
-    }
 }
