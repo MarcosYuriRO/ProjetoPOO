@@ -1,29 +1,18 @@
 package ProjectTest.Controle;
 
+import ProjectTest.Imigrantes.GeradorDeImigrantes;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Jogo {
-
-    //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
-    /*  public boolean verificarLegalidade(Imigrante dadosImigrante) {
-            if(estaValido() && dadosImigrante.getNome().equals(getNomeCompleto()) && dadosImigrante.getIdade() == calcularIdade()){
-                return true;
-            } else {
-                return false;
-            }
-        }
-    //Diminui o ano atual, pelo ano de nascimento presente na identidade, resultando na idade
-    public int calcularIdade(){
-        return LocalDate.now().getYear() - getDataNascimento().getYear();
-    }*/
-
+public class MenuInGame {
     public void menu(){
         Scanner scan = new Scanner(System.in);
 
         int escolha = 0;
+        int pararCodigo = 0;
 
-        while (escolha != 4 || escolha != 5) {
+        do {
             System.out.println("""
                 1. Checar Manual de Regras
                 2. Verificar Passaporte
@@ -40,14 +29,12 @@ public class Jogo {
                             O que avaliar em cada documento?
                                 Documentos Obrigatórios para todas Nacionalidades:
                                 - Identidade:
-                                  - Checar validade;
-                                  - Checar o nome do passaporte com o nome da identidade;
-                                  - Verificar se a data de nascimento condiz com a idade dita.
+                                  - Nome da Identidade diferente com o nome ditado pelo imigrante;
                             
                                 - Passaporte:
-                                  - O país dito pelo imigrante deve estar de acordo com o redigido em seu passaporte;
-                                  - O nome do imigrante deve coincidir com o nome dito.
-                            
+                                  - Checar data de validade do documento;
+                                  - Nome no Passaporte não coincide com o dito pelo imigrante;
+                           
                             """);
                     System.out.println("Data atual: " + LocalDate.now());
                     break;
@@ -59,17 +46,18 @@ public class Jogo {
                     break;
 
                 case 4:
-
+                    System.out.println("A porta ao lado do imigrante se abre. Você permite a entrada dele.");
+                    pararCodigo = 1;
                     break;
 
                 case 5:
-
+                    System.out.println("Você chama os guardas para acompanharem o imigrante à saída.");
+                   pararCodigo = 1;
                     break;
 
                 default:
                     System.out.println("Opção Inválida!");
             }
-        }
+        } while (pararCodigo == 0);
     }
 }
-
