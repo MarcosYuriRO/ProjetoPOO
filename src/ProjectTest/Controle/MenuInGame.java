@@ -51,6 +51,7 @@ public class MenuInGame {
                     break;
                 case 3:
 
+
                     pararCodigo = 0;
                     break;
                 case 4:

@@ -51,9 +51,9 @@ public class Jogo {
         System.out.println("Acertos: " + acertos);
         System.out.println("Erros: " + erros);
         //Exibir dinheiro recebido no dia e dinheiro total
-        ganhosDiario = acertos * PAGAMENTO_POR_ACERTO
+        ganhosDiario = acertos * PAGAMENTO_POR_ACERTO;
         System.out.println("\n Ganhos do dia: " + ganhosDiario);
-        perdasDiarias = erros * CUSTO_POR_ERRO + CUSTO_DIARIO_FIXO
+        perdasDiarias = erros * CUSTO_POR_ERRO + CUSTO_DIARIO_FIXO;
         System.out.println("Gastos do dia: " + perdasDiarias);
         saldo = ganhosDiario - perdasDiarias;
         System.out.println("Saldo total: " + saldo);
