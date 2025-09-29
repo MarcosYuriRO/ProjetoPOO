@@ -17,14 +17,15 @@ public class MenuInGame {
 
         do {
             System.out.println("""
-                1. Checar Manual de Regras
-                2. Verificar Passaporte
-                3. Verificar Identidade
-                4. Permitir Entrada de Imigrante
+                1. (R)egras
+                2. Passaporte
+                3. Identidade
+                4. Aceitar Entrada
                 5. Negar Entrada de Imigrante
                 
                 """);
             escolha = scan.nextInt();
+            Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
 
             switch (escolha) {
                 case 1:
@@ -43,14 +44,14 @@ public class MenuInGame {
                     pararCodigo = 0;
                     break;
                 case 2:
-                    Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
                     Passaporte passaporte = (Passaporte) imigrante.getDocumentoPorTipo("passaporte");
                     System.out.println(passaporte.exibirDetalhes());
 
                     pararCodigo = 0;
                     break;
                 case 3:
-
+                    Identidade identidade = (Identidade) imigrante.getDocumentoPorTipo("identidade");
+                    System.out.println(identidade.exibirDetalhes());
 
                     pararCodigo = 0;
                     break;
