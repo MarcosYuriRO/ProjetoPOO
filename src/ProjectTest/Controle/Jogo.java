@@ -39,6 +39,7 @@ public class Jogo {
             menuInGame.menu();
         }
         System.out.println("Seu turno acabou!!");
+        finalizarDia();
     }
 
     private void proximoImigrante() {
