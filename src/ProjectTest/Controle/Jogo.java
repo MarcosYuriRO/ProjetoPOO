@@ -11,6 +11,8 @@ public class Jogo {
     private int saldo;
     private int acertos;
     private int erros;
+    private int ganhosDiario;
+    private int perdasDiarias;
     private int diaAtual;
     private LocalDate dataAtual;
     private long tempoLimite;
@@ -29,12 +31,12 @@ public class Jogo {
     }
 
     private void iniciarDia(int dia) {
-        MenuInicial menuInicial = new MenuInicial();
+        MenuInGame menuInGame = new MenuInGame();
         long tempoInicial = System.currentTimeMillis();
        tempoLimite = tempoInicial + 60000;
         while ( System.currentTimeMillis() <= tempoLimite) {
             proximoImigrante();
-            menuInicial.menuInicial();
+            menuInGame.menu();
         }
         System.out.println("Seu turno acabou!!");
     }
@@ -43,7 +45,24 @@ public class Jogo {
         GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
     }
 
-    private void finalizarDia() {}
+    private void finalizarDia() {
+        System.out.println("Após um cansativo dia de trabalho, você volta para casa.");
+        System.out.println("Acertos: " + acertos);
+        System.out.println("Erros: " + erros);
+        //Exibir dinheiro recebido no dia e dinheiro total
+        ganhosDiario = acertos * PAGAMENTO_POR_ACERTO
+        System.out.println("\n Ganhos do dia: " + ganhosDiario);
+        perdasDiarias = erros * CUSTO_POR_ERRO + CUSTO_DIARIO_FIXO
+        System.out.println("Gastos do dia: " + perdasDiarias);
+        saldo = ganhosDiario - perdasDiarias;
+        System.out.println("Saldo total: " + saldo);
+
+        if(saldo >= META_DINHEIRO){
+            System.out.println("Parabéns, você venceu o jogo!!");
+            finalizarJogo();
+        }
+
+    }
 
     private void avancarProximoDia() {}
 
@@ -66,4 +85,3 @@ public class Jogo {
     }*/
 
 }
-

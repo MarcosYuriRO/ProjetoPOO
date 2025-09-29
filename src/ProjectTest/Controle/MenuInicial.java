@@ -30,7 +30,8 @@ public class MenuInicial {
                 aparecendo na frente da janela escura que o protegia daqueles de fora.
                 
                 """);
-                menuJogatina.menu();
+                Jogo opcoes = new Jogo();
+                opcoes.iniciarJogo();
 
                 break;
                 case 2:

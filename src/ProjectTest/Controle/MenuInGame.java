@@ -40,30 +40,30 @@ public class MenuInGame {
                            
                             """);
                     System.out.println("Data atual: " + LocalDate.now());
+                    pararCodigo = 0;
                     break;
                 case 2:
                     Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
                     Passaporte passaporte = (Passaporte) imigrante.getDocumentoPorTipo("passaporte");
                     System.out.println(passaporte.exibirDetalhes());
 
-
+                    pararCodigo = 0;
                     break;
                 case 3:
 
+                    pararCodigo = 0;
                     break;
-
                 case 4:
                     System.out.println("A porta ao lado do imigrante se abre. Você permite a entrada dele.");
                     pararCodigo = 1;
                     break;
-
                 case 5:
                     System.out.println("Você chama os guardas para acompanharem o imigrante à saída.");
                    pararCodigo = 1;
                     break;
-
                 default:
                     System.out.println("Opção Inválida!");
+                    pararCodigo = 0;
             }
         } while (pararCodigo == 0);
     }
