@@ -1,6 +1,8 @@
 package ProjectTest.Controle;
 
+import ProjectTest.Documentos.Identidade;
 import ProjectTest.Imigrantes.GeradorDeImigrantes;
+import ProjectTest.Imigrantes.Imigrante;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -19,6 +21,7 @@ public class Jogo {
     private long tempoLimite;
 
     //Constantes
+    private final int DIA_LIMITE = 10;
     private final int META_DINHEIRO = 1500; //Não sei exatamente qual é a meta
     private final int PAGAMENTO_POR_ACERTO = 50; //Cada acerto dará 50 pro jogador
     private final int CUSTO_POR_ERRO = 80; //Cada erro custará 80 pro jogador
@@ -74,16 +77,13 @@ public class Jogo {
 
 
     //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
-    /*  public boolean verificarLegalidade(Imigrante dadosImigrante) {
-            if(estaValido() && dadosImigrante.getNome().equals(getNomeCompleto()) && dadosImigrante.getIdade() == calcularIdade()){
+      public boolean verificarLegalidade(Imigrante dadosImigrante, Identidade dadosIdentidade) {
+            if(){
                 return true;
             } else {
                 return false;
             }
         }
-    //Diminui o ano atual, pelo ano de nascimento presente na identidade, resultando na idade
-    public int calcularIdade(){
-        return LocalDate.now().getYear() - getDataNascimento().getYear();
-    }*/
+
 
 }

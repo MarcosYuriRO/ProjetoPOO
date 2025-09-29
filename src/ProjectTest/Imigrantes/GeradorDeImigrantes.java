@@ -51,17 +51,17 @@ public class GeradorDeImigrantes {
                 case 0:
                     //Erro 01 --> PASSAPORTE venciido
                     validadePassaporte = dataAtual.minusDays(1 + aleatorio.nextInt(365));
-                    System.out.println("  ERRO! -- O passaporte está VENCIDO!");
+                    //System.out.println("  ERRO! -- O passaporte está VENCIDO!");
                     break;
                 case 1:
                     //Error 02 --> Nome errado no passaporte --- comparado com o do imigrante
                     String nomeFalso = "Falso" + NOMES[aleatorio.nextInt(NOMES.length)];
                     nomeSorteado = nomeFalso; //Nome do imigrante será o falso
-                    System.out.println("  ERRO!  -- O NOME no passaporte está incorreto!");
+                    //System.out.println("  ERRO!  -- O NOME no passaporte está incorreto!");
                     break;
                 case 2:
                     //Erro 03 --> Não tem passaporte
-                    System.out.println("  ERRO! -- Você está SEM passaporte!");
+                    //System.out.println("  ERRO! -- Você está SEM passaporte!");
                     //Não vamos add o passaporte ao Imigrante
                     return new Imigrante(nomeSorteado, paisSorteado, documentos, false);
             }
