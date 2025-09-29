@@ -59,24 +59,35 @@ public class Jogo {
         System.out.println("\n Ganhos do dia: " + ganhosDiario);
         perdasDiarias = erros * CUSTO_POR_ERRO + CUSTO_DIARIO_FIXO;
         System.out.println("Gastos do dia: " + perdasDiarias);
-        saldo = ganhosDiario - perdasDiarias;
+        saldo += (ganhosDiario - perdasDiarias);
         System.out.println("Saldo total: " + saldo);
 
-        if(saldo >= META_DINHEIRO){
+        if (saldo < 0) {
+            System.out.println("Seu saldo zerou Você não pode pagar o aluguel e foi despejado.");
+            System.out.println("Fim de jogo.");
+            finalizarJogo();
+
+        } else if (saldo >= META_DINHEIRO) {
             System.out.println("Parabéns, você venceu o jogo!!");
             finalizarJogo();
         }
 
     }
+        private void avancarProximoDia () {
+            System.out.println("O dia acabou..., mas um novo dia está para começar");
+            diaAtual++;
+            acertos = 0;
+            erros = 0;
+            iniciarDia(diaAtual);
+        }
 
-    private void avancarProximoDia() {}
+        private void finalizarJogo(){
 
-    private void finalizarJogo() {}
+        if (diaAtual >= DIA_LIMITE )
+        }
 
 
-
-
-    //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
+        //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
       public boolean verificarLegalidade(Imigrante dadosImigrante, Identidade dadosIdentidade) {
             if(){
                 return true;
@@ -84,6 +95,9 @@ public class Jogo {
                 return false;
             }
         }
-
+    //Diminui o ano atual, pelo ano de nascimento presente na identidade, resultando na idade
+    public int calcularIdade(){
+        return LocalDate.now().getYear() - getDataNascimento().getYear();
+    }*/
 
 }
