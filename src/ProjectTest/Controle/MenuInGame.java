@@ -11,24 +11,29 @@ import java.util.Scanner;
 public class MenuInGame {
     public void menu(){
         Scanner scan = new Scanner(System.in);
+        Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
+        Passaporte passaporte = (Passaporte) imigrante.getDocumentoPorTipo("passaporte");
+        Identidade identidade = (Identidade) imigrante.getDocumentoPorTipo("identidade");
 
-        int escolha = 0;
+
+        String escolha;
         int pararCodigo = 0;
+
 
         do {
             System.out.println("""
-                1. (R)egras
-                2. Passaporte
-                3. Identidade
-                4. Aceitar Entrada
-                5. Negar Entrada de Imigrante
+                [R] - Regras
+                [P] - Passaporte
+                [I] - Identidade
+                [A] - Aceitar Entrada
+                [N] - Negar Entrada de Imigrante
                 
                 """);
-            escolha = scan.nextInt();
-            Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
+            escolha = scan.nextLine();
+
 
             switch (escolha) {
-                case 1:
+                case "R":
                     System.out.println("""
                             O que avaliar em cada documento?
                                 Documentos Obrigatórios para todas Nacionalidades:
@@ -41,31 +46,28 @@ public class MenuInGame {
                            
                             """);
                     System.out.println("Data atual: " + LocalDate.now());
-                    pararCodigo = 0;
                     break;
-                case 2:
-                    Passaporte passaporte = (Passaporte) imigrante.getDocumentoPorTipo("passaporte");
-                    System.out.println(passaporte.exibirDetalhes());
+                case "P":
+                    passaporte.exibirDetalhes();
 
-                    pararCodigo = 0;
                     break;
-                case 3:
-                    Identidade identidade = (Identidade) imigrante.getDocumentoPorTipo("identidade");
-                    System.out.println(identidade.exibirDetalhes());
+                case "I":
+                    identidade.exibirDetalhes();
 
-                    pararCodigo = 0;
                     break;
-                case 4:
+                case "A":
                     System.out.println("A porta ao lado do imigrante se abre. Você permite a entrada dele.");
+
                     pararCodigo = 1;
                     break;
-                case 5:
+                case "N":
                     System.out.println("Você chama os guardas para acompanharem o imigrante à saída.");
-                   pararCodigo = 1;
+
+                    pararCodigo = 1;
                     break;
                 default:
                     System.out.println("Opção Inválida!");
-                    pararCodigo = 0;
+
             }
         } while (pararCodigo == 0);
     }

@@ -8,6 +8,8 @@ public class MenuInicial {
         MenuInGame menuJogatina = new MenuInGame();
 
         int opcao = 0;
+
+        while (opcao != 4) {
             System.out.println("""
                     Bem vindo(a) a PAPERS, PLEASE!!!
                     
@@ -21,19 +23,19 @@ public class MenuInicial {
             switch (opcao) {
                 case 1:
                     System.out.println("""
-                Cá está você em mais uma fria manhã de trabalho. Você adentra à fronteira 
-                pelo lado de dentro, mas já vendo uma enorme fila de immigrantes que
-                buscam adentrar ao seu país; sabendo disso, está na hora de você checar seus
-                documentos e saber quem de fato merece adentrar a Arstotzka!
-                
-                Assim que adentra em sua cabine, já começam os trabalhos, com o primeiro imigrante 
-                aparecendo na frente da janela escura que o protegia daqueles de fora.
-                
-                """);
-                Jogo opcoes = new Jogo();
-                opcoes.iniciarJogo();
+                            Cá está você em mais uma fria manhã de trabalho. Você adentra à fronteira 
+                            pelo lado de dentro, mas já vendo uma enorme fila de immigrantes que
+                            buscam adentrar ao seu país; sabendo disso, está na hora de você checar seus
+                            documentos e saber quem de fato merece adentrar a Arstotzka!
+                            
+                            Assim que adentra em sua cabine, já começam os trabalhos, com o primeiro imigrante 
+                            aparecendo na frente da janela escura que o protegia daqueles de fora.
+                            
+                            """);
+                    Jogo opcoes = new Jogo();
+                    opcoes.iniciarJogo();
 
-                break;
+                    break;
                 case 2:
                     System.out.println("""
                             PAPERS, PLEASE é um jogo que conta a história de um vigilante de uma fronteira
@@ -47,11 +49,11 @@ public class MenuInicial {
                     System.out.println("""
                             Criadores deste Código:
                             André Arthur 🐻
-                            Gabriel Tavares 🐕
-                            Kaillanny Fontana 🐈
+                            Gabriel Tavares 🦃
+                            Kaillanny Fontana 🦕
                             Marcos Yuri 🐨
                             Moisés Dutra 🐙
-                          
+                            
                             """);
                     break;
                 case 4:
@@ -60,5 +62,6 @@ public class MenuInicial {
                 default:
                     System.out.println("Opção Inválida!");
             }
+        }
     }
 }

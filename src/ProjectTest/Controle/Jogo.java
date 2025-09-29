@@ -14,6 +14,7 @@ public class Jogo {
     private int ganhosDiario;
     private int perdasDiarias;
     private int diaAtual;
+    private int diaLimite;
     private LocalDate dataAtual;
     private long tempoLimite;
 

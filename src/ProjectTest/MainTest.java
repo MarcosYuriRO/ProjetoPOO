@@ -7,6 +7,9 @@ public class MainTest {
     public static void main(String[] args) {
 
         Jogo jogo = new Jogo();
+        MenuInicial menuInicial = new MenuInicial();
+
+        menuInicial.menuInicial();
         jogo.iniciarJogo();
 
 

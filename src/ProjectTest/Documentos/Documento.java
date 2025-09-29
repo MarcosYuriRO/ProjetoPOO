@@ -17,6 +17,9 @@ public abstract class Documento {
         this.tipo = tipo;
     }
 
+    public Documento() {
+    }
+
     //Metodo que checa se o doc é valido na data atual do game
     public boolean estaValido(LocalDate dataAtualDoJogo) {
         //Se o documento tiver data de validade antes ou igual, ele é TRUE e depois ele é FALSE
@@ -24,7 +27,7 @@ public abstract class Documento {
     }
 
     //Metodo abstrato que exibe os docs
-    public abstract String exibirDetalhes();
+    public abstract void exibirDetalhes();
 
     //Todos documentos devem ter este metodo, mas ele varia a cada subclasse devido seus diferentes atributos
 
