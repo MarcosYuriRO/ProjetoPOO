@@ -1,13 +1,14 @@
 package ProjectTest;
 
+import ProjectTest.Controle.Jogo;
 import ProjectTest.Controle.MenuInicial;
 
 public class MainTest {
     public static void main(String[] args) {
-        MenuInicial menu = new MenuInicial();
 
+        Jogo jogo = new Jogo();
+        jogo.iniciarJogo();
 
-        menu.menuInicial();
 
         //System.out.println("Gerando imigrante: " + GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.of(1982, 11, 23)));
 

@@ -1,6 +1,9 @@
 package ProjectTest.Controle;
 
+import ProjectTest.Documentos.Identidade;
+import ProjectTest.Documentos.Passaporte;
 import ProjectTest.Imigrantes.GeradorDeImigrantes;
+import ProjectTest.Imigrantes.Imigrante;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -39,6 +42,10 @@ public class MenuInGame {
                     System.out.println("Data atual: " + LocalDate.now());
                     break;
                 case 2:
+                    Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
+                    Passaporte passaporte = (Passaporte) imigrante.getDocumentoPorTipo("passaporte");
+                    System.out.println(passaporte.exibirDetalhes());
+
 
                     break;
                 case 3:

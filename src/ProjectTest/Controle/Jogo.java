@@ -1,5 +1,7 @@
 package ProjectTest.Controle;
 
+import ProjectTest.Imigrantes.GeradorDeImigrantes;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -21,9 +23,25 @@ public class Jogo {
 
 
     //Metodos
-    private void iniciarDia(int dia) {}
 
-    private void proximoImigrante() {}
+    public void iniciarJogo() {
+        iniciarDia(1);
+    }
+
+    private void iniciarDia(int dia) {
+        MenuInicial menuInicial = new MenuInicial();
+        long tempoInicial = System.currentTimeMillis();
+       tempoLimite = tempoInicial + 60000;
+        while ( System.currentTimeMillis() <= tempoLimite) {
+            proximoImigrante();
+            menuInicial.menuInicial();
+        }
+        System.out.println("Seu turno acabou!!");
+    }
+
+    private void proximoImigrante() {
+        GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
+    }
 
     private void finalizarDia() {}
 

@@ -8,7 +8,6 @@ public class MenuInicial {
         MenuInGame menuJogatina = new MenuInGame();
 
         int opcao = 0;
-        do {
             System.out.println("""
                     Bem vindo(a) a PAPERS, PLEASE!!!
                     
@@ -60,6 +59,5 @@ public class MenuInicial {
                 default:
                     System.out.println("Opção Inválida!");
             }
-        } while (opcao != 4);
     }
 }

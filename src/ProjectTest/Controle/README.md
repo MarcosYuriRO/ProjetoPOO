@@ -118,4 +118,5 @@ Aqui fechamo
 ------------
 
 # O.B.S.:
-Só coloquei umas ideias que testei aqui, mas não consegui terminar, então confio em vcs pra issooo
+Só coloquei umas ideias que testei aqui, mas não consegui terminar, então confio em vcs pra issooo.
+Precisamos terminar os métodos (proximoImigrante(), finalizarDia(), avancarProximoDia(), finalizarJogo()), adicionar alguns textos de dialogos e tambem o sistema de dinheiro(ganhar ou perder de acordo com seu desempenho do dia).
