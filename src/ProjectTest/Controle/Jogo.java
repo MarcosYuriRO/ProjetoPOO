@@ -18,7 +18,7 @@ public class Jogo {
     private int perdasDiarias;
     private int diaAtual;
     private LocalDate dataAtual;
-    private long tempoLimite;
+
 
     //Constantes
     private final int DIA_LIMITE = 10;
@@ -26,6 +26,7 @@ public class Jogo {
     private final int PAGAMENTO_POR_ACERTO = 50; //Cada acerto dará 50 pro jogador
     private final int CUSTO_POR_ERRO = 80; //Cada erro custará 80 pro jogador
     private final int CUSTO_DIARIO_FIXO = 100; //Aluguel, comida, agua
+    private final long TEMPO_LIMITE = 60000;
 
     Scanner escanear = new Scanner(System.in);
 
@@ -38,21 +39,35 @@ public class Jogo {
 
     //Inicia a lógica do jogo
     public void iniciarJogo() {
-        iniciarDia(1);
+        this.diaAtual = 1;
+
+        while ((diaAtual <= DIA_LIMITE) && (saldo < META_DINHEIRO)) {
+            System.out.println("Você inicia sua jornada na fronteira de Arstotzka!");
+            System.out.println("Dia: " + diaAtual + "\nMeta: $" + META_DINHEIRO);
+
+            //Inicia o timer
+            iniciarDia();
+        }
+
+        //Se sai do loop, quer dizer que acabou algo (tempo ou dinhero)
+        finalizarJogo();
     }
 
-    private void iniciarDia(int dia) {
+    private void iniciarDia() {
+        //TIMER 60S
         long tempoInicial = System.currentTimeMillis();
-       tempoLimite = tempoInicial + 60000;
-        while ( System.currentTimeMillis() <= tempoLimite) {
-            proximoImigrante(60000);
+        long tempoLimite = tempoInicial + TEMPO_LIMITE;//Quando o dia acabaa
+
+        while (System.currentTimeMillis() < tempoLimite) {
+            proximoImigrante(tempoLimite);
         }
         System.out.println("Seu turno acabou!!");
         finalizarDia();
+
     }
 
     //Chama o proximo imigrante
-    private void proximoImigrante(long tempoLimite) {
+    private void proximoImigrante(long TEMPO_LIMITE) {
 
         //Cria um imigrante
         Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(dataAtual);
@@ -69,7 +84,7 @@ public class Jogo {
         //Loop que vai verificar (dura até o timer ter 60s ou até tomarem uma decisão)
         do {
             //Checaqgem de tempo interno (se o jogador demorar dmais no menu
-            if (System.currentTimeMillis() >= tempoLimite) {
+            if (System.currentTimeMillis() >= TEMPO_LIMITE) {
                 System.out.println("O tempo acabou enquanto você estava verificar os dados!");
                 return;  //Quita o metodo
             }
@@ -117,22 +132,15 @@ public class Jogo {
                     break;
 
                 case "A":
+                    decisaoTomada = true;
                     System.out.println("A porta ao lado do imigrante se abre. Você permite a entrada dele.");
-                    if (verificarLegalidade(imigrante)) {
-                        System.out.println("Você Acertou!");
-                    } else {
-                        System.out.println("Você Errou!");
-                    }
+                    processarDecisao(imigrante, true);
                     break;
 
                 case "N":
                     decisaoTomada = true;
                     System.out.println("Você chama os guardas para acompanharem o imigrante à saída.");
-                    if (verificarLegalidade(imigrante)) {
-                        System.out.println("Você Acertou!");
-                    } else {
-                        System.out.println("Você Errou!");
-                    }
+                    processarDecisao(imigrante, false);
                     break;
 
                 default:
@@ -146,32 +154,43 @@ public class Jogo {
         System.out.println("Após um cansativo dia de trabalho, você volta para casa.");
         System.out.println("Acertos: " + acertos);
         System.out.println("Erros: " + erros);
+
         //Exibir dinheiro recebido no dia e dinheiro total
         ganhosDiario = acertos * PAGAMENTO_POR_ACERTO;
         System.out.println("\n Ganhos do dia: " + ganhosDiario);
         perdasDiarias = erros * CUSTO_POR_ERRO + CUSTO_DIARIO_FIXO;
         System.out.println("Gastos do dia: " + perdasDiarias);
         saldo += (ganhosDiario - perdasDiarias);
+
+
         System.out.println("Saldo total: " + saldo);
 
         if (saldo < 0) {
-            System.out.println("Seu saldo zerou Você não pode pagar o aluguel e foi despejado.");
+            System.out.println("Seu saldo zerou! Você não pôde pagar o aluguel e foi despejado.");
             System.out.println("Fim de jogo.");
             finalizarJogo();
+            return; //Termina o metodo
 
         } else if (saldo >= META_DINHEIRO) {
             System.out.println("Parabéns, você venceu o jogo!!");
             finalizarJogo();
+            return; //Termina o metodo
         }
+
+        avancarProximoDia();
 
     }
     private void avancarProximoDia () {
-          System.out.println("O dia acabou..., mas um novo dia está para começar");
-          diaAtual++;
-          acertos = 0;
-          erros = 0;
-          iniciarDia(diaAtual);
-        }
+         System.out.println("O dia acabou...\n Mas um novo dia está para começar!");
+
+         //Arruma os contadores e avança o dia
+         diaAtual++;
+         acertos = 0;
+         erros = 0;
+
+         //Inicia um novo dia
+         iniciarDia();
+    }
 
     private void finalizarJogo(){
     /*if (diaAtual >= DIA_LIMITE ) {
