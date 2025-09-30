@@ -38,7 +38,7 @@ public class MenuInicial {
                     break;
                 case 2:
                     System.out.println("""
-                            PAPERS, PLEASE é um jogo que conta a história de um vigilante de uma fronteira
+                            PAPÉIS, POR FAVOR é um jogo que conta a história de um vigilante de uma fronteira
                             de um país chamdo Arstotzka; ele ganha seu salário a partir de descobrir os
                             imigrantes legais e ilegais que tentam entrar em seu país, através de análises
                             em busca de irregularidades nos documentos apresentados de cada imigrante.
