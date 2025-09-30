@@ -26,7 +26,7 @@ public class Jogo {
     private final int PAGAMENTO_POR_ACERTO = 50; //Cada acerto dará 50 pro jogador
     private final int CUSTO_POR_ERRO = 80; //Cada erro custará 80 pro jogador
     private final int CUSTO_DIARIO_FIXO = 100; //Aluguel, comida, agua
-    private final long TEMPO_LIMITE = 120000;
+    private final long TEMPO_LIMITE = 90000;
 
     Scanner escanear = new Scanner(System.in);
 
@@ -90,7 +90,7 @@ public class Jogo {
         do {
             //Checaqgem de tempo interno (se o jogador demorar dmais no menu
             if (System.currentTimeMillis() >= TEMPO_LIMITE) {
-                System.out.println("O tempo acabou enquanto você estava verificar os dados!");
+                System.out.println("O tempo acabou enquanto você estava verificando os dados!");
                 return;  //Quita o metodo
             }
 
@@ -108,7 +108,7 @@ public class Jogo {
                 case "R":
                     System.out.println("""
                             O que avaliar em cada documento?
-                                Documentos Obrigatórios para todas Nacionalidades:
+                                Documentos Obrigatórios para todas as nacionalidades:
                                 - Identidade:
                                   - Nome da Identidade diferente com o nome ditado pelo imigrante;
                             
