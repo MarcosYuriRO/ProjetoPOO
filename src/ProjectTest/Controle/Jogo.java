@@ -26,7 +26,7 @@ public class Jogo {
     private final int PAGAMENTO_POR_ACERTO = 50; //Cada acerto dará 50 pro jogador
     private final int CUSTO_POR_ERRO = 80; //Cada erro custará 80 pro jogador
     private final int CUSTO_DIARIO_FIXO = 100; //Aluguel, comida, agua
-    private final long TEMPO_LIMITE = 90000;
+    private final long TEMPO_LIMITE = 120000;
 
     Scanner escanear = new Scanner(System.in);
 
@@ -42,6 +42,10 @@ public class Jogo {
         this.diaAtual = 1;
 
         while ((diaAtual <= DIA_LIMITE) && (saldo < META_DINHEIRO)) {
+            System.out.printf("""
+                            LEMBRETE: Em seu contrato, você ganhará %d a cada acerto, mas perderá %d para cada erro
+                            na liberação e negação de imigrantes. (Lembre-se, seu aluguel diário é de %d.)\n
+                    """, PAGAMENTO_POR_ACERTO, CUSTO_POR_ERRO, CUSTO_DIARIO_FIXO);
             System.out.println("Você inicia sua jornada na fronteira de Arstotzka!");
             System.out.println("Dia: " + diaAtual + "\nMeta: $" + META_DINHEIRO);
 

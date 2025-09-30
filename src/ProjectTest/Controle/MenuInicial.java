@@ -22,13 +22,15 @@ public class MenuInicial {
             switch (opcao) {
                 case 1:
                     System.out.println("""
-                            Cá está você em mais uma fria manhã de trabalho em 198
+                            Cá está você em mais uma fria manhã de trabalho em 1982
                             Você adentra à fronteira pelo lado de dentro, mas já vendo 
                             uma enorme fila de imigrantes que buscam adentrar ao seu país.
                             Sabendo disso, está na hora de você checar seus documentos
                             e saber quem de fato merece adentrar a Arstotzka!
+                            Sua meta, neste trabalho, é arrecadar dinheiro o suficiente para
+                            pagar a cirurgia de sua mãe.
                            
-                            Assim que adentra em sua cabine, já começam os trabalhos, com o primeiro imigrante 
+                            Assim que você adentra em sua cabine, já começam os trabalhos, com o primeiro imigrante 
                             aparecendo na frente da janela escura que o protegia daqueles de fora.
                             
                             """);
