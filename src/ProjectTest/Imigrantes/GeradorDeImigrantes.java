@@ -75,8 +75,8 @@ public class GeradorDeImigrantes {
                 LocalDate dataNascimento = dataAtual.minusYears(18 + aleatorio.nextInt(40));
                 int numeroRG = gerarNumeroUnico();
 
-                //30% de chance de erro nos dados do ID
-                if (deveSerAceito && aleatorio.nextDouble() < 0.30) {
+                //20% de chance de erro nos dados do ID
+                if (deveSerAceito && aleatorio.nextDouble() < 0.20) {
                     deveSerAceito = false; // Se o nome estiver errado, o imigrante deve ser rejeitado
 
                     String nomeErrado = NOMES[aleatorio.nextInt(NOMES.length)];
