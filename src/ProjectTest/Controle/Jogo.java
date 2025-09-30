@@ -21,12 +21,12 @@ public class Jogo {
 
 
     //Constantes
-    private final int DIA_LIMITE = 10;
+    private final int DIA_LIMITE = 5;
     private final int META_DINHEIRO = 1500; //Não sei exatamente qual é a meta
     private final int PAGAMENTO_POR_ACERTO = 50; //Cada acerto dará 50 pro jogador
     private final int CUSTO_POR_ERRO = 80; //Cada erro custará 80 pro jogador
     private final int CUSTO_DIARIO_FIXO = 100; //Aluguel, comida, agua
-    private final long TEMPO_LIMITE = 60000;
+    private final long TEMPO_LIMITE = 90000;
 
     Scanner escanear = new Scanner(System.in);
 
