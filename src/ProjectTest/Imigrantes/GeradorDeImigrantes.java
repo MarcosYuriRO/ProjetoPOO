@@ -33,9 +33,6 @@ public class GeradorDeImigrantes {
         // Assume que está correto(TRUE) por padrão
         boolean deveSerAceito = true;
 
-        // Se tivern algum erro
-        boolean temErroNoDocumento = false;
-
         // ----------- GERANDO PASSAPORTE (30% de chance de sairr)
 
         //Válidoo por até 5 anos
@@ -51,17 +48,14 @@ public class GeradorDeImigrantes {
                 case 0:
                     //Erro 01 --> PASSAPORTE venciido
                     validadePassaporte = dataAtual.minusDays(1 + aleatorio.nextInt(365));
-                    //System.out.println("  ERRO! -- O passaporte está VENCIDO!");
                     break;
                 case 1:
                     //Error 02 --> Nome errado no passaporte --- comparado com o do imigrante
-                    String nomeFalso = "Falso" + NOMES[aleatorio.nextInt(NOMES.length)];
+                    String nomeFalso = NOMES[aleatorio.nextInt(NOMES.length)];
                     nomeSorteado = nomeFalso; //Nome do imigrante será o falso
-                    //System.out.println("  ERRO!  -- O NOME no passaporte está incorreto!");
                     break;
                 case 2:
                     //Erro 03 --> Não tem passaporte
-                    //System.out.println("  ERRO! -- Você está SEM passaporte!");
                     //Não vamos add o passaporte ao Imigrante
                     return new Imigrante(nomeSorteado, paisSorteado, documentos, false);
             }
@@ -85,10 +79,9 @@ public class GeradorDeImigrantes {
                 if (deveSerAceito && aleatorio.nextDouble() < 0.15) {
                     deveSerAceito = false; // Se o nome estiver errado, o imigrante deve ser rejeitado
 
-                    String nomeErrado = "Errado " + NOMES[aleatorio.nextInt(NOMES.length)];
+                    String nomeErrado = NOMES[aleatorio.nextInt(NOMES.length)];
                     nomeSorteado = nomeErrado; //O nome sorteado será o errado
 
-                    System.out.println("  ERRO! - Nome diferente na Identidade.");
                 }
 
                 Identidade identidade = new Identidade(nomeSorteado, validadeIdentidade, dataNascimento, numeroRG);

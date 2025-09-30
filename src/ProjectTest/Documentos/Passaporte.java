@@ -14,14 +14,6 @@ public class Passaporte extends Documento{
         this.paisDeOrigem = paisDeOrigem;
     }
 
-    //Getters
-    public int getNumeroDoPassaporte() {
-        return numeroDoPassaporte;
-    }
-    public String getPaisDeOrigem() {
-        return paisDeOrigem;
-    }
-
     //Metodo obrigatorio herdado da super Documento
     @Override
     public void exibirDetalhes() {

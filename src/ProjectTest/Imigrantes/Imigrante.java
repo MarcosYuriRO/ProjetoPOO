@@ -23,15 +23,6 @@ public class Imigrante {
     public String getNome() {
         return nome;
     }
-    public String getNacionalidadeReal() {
-        return nacionalidadeReal;
-    }
-    public List<Documento> getDocumentos() {
-        return documentos;
-    }
-    public boolean isDecisaoCorreta() {
-        return decisaoCorreta;
-    }
 
 
     //Métodos

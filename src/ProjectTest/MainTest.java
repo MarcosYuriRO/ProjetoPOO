@@ -1,6 +1,5 @@
 package ProjectTest;
 
-import ProjectTest.Controle.Jogo;
 import ProjectTest.Controle.MenuInicial;
 
 public class MainTest {

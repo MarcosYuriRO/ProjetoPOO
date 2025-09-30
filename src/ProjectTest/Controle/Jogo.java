@@ -106,6 +106,7 @@ public class Jogo {
                                 Documentos Obrigatórios para todas Nacionalidades:
                                 - Identidade:
                                   - Nome da Identidade diferente com o nome ditado pelo imigrante;
+                                  - Verificar a Data de Validade;
                             
                                 - Passaporte:
                                   - Checar data de validade do documento;
@@ -194,9 +195,7 @@ public class Jogo {
     }
 
     private void finalizarJogo() {
-    /*if (diaAtual >= DIA_LIMITE ) {
-    } else {
-    }*/
+
         System.out.println("FIM DE JOGO: Arstotzka agradece seus serviços");
         System.out.println("Saldo final: " + saldo);
     }
@@ -227,7 +226,8 @@ public class Jogo {
         boolean nomeEstaCerto = dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("identidade").getNomeCompleto()) &&
                 dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("passaporte").getNomeCompleto());
 
-        boolean docsEstaoValidos = dadosImigrante.getDocumentoPorTipo("identidade").estaValido(LocalDate.now()) && dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(LocalDate.now());
+        boolean docsEstaoValidos = dadosImigrante.getDocumentoPorTipo("identidade").estaValido(LocalDate.now()) &&
+                dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(LocalDate.now());
 
         return nomeEstaCerto && docsEstaoValidos;
 

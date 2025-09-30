@@ -17,12 +17,6 @@ public class Identidade extends Documento{
     public Identidade() {
     }
 
-    //Getters
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-    public int getNumeroRG() { return numeroRG; }
-
     //Metodo obrigatorio herdado da super Documento
     @Override
     public void exibirDetalhes() {
