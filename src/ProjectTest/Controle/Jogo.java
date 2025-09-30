@@ -83,13 +83,18 @@ public class Jogo {
 
         private void finalizarJogo(){
 
-        if (diaAtual >= DIA_LIMITE )
+        if (diaAtual >= DIA_LIMITE ){
+
+        }
         }
 
 
     //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
       public boolean verificarLegalidade(Imigrante dadosImigrante) {
-            if(){
+            if(dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("identidade").getNomeCompleto()) &&
+                    dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("passaporte").getNomeCompleto()) &&
+                    dadosImigrante.getDocumentoPorTipo("identidade").estaValido(LocalDate.now()) &&
+                    dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(LocalDate.now())) {
                 return true;
             } else {
                 return false;

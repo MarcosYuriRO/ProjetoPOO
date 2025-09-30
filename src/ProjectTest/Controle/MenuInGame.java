@@ -14,6 +14,8 @@ public class MenuInGame {
         Imigrante imigrante = GeradorDeImigrantes.gerarImigranteAleatorio(LocalDate.now());
         Passaporte passaporte = (Passaporte) imigrante.getDocumentoPorTipo("passaporte");
         Identidade identidade = (Identidade) imigrante.getDocumentoPorTipo("identidade");
+        Jogo verificar = new Jogo();
+        verificar.verificarLegalidade(imigrante);
 
 
         String escolha;
@@ -57,11 +59,21 @@ public class MenuInGame {
                     break;
                 case "A":
                     System.out.println("A porta ao lado do imigrante se abre. Você permite a entrada dele.");
+                    if(verificar.verificarLegalidade(imigrante)){
+                        System.out.println("Você Acertou!");
+                    } else {
+                        System.out.println("Você Errou!");
+                    }
 
                     pararCodigo = 1;
                     break;
                 case "N":
                     System.out.println("Você chama os guardas para acompanharem o imigrante à saída.");
+                    if(verificar.verificarLegalidade(imigrante)){
+                        System.out.println("Você Acertou!");
+                    } else {
+                        System.out.println("Você Errou!");
+                    }
 
                     pararCodigo = 1;
                     break;
