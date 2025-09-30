@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e55f8b87-c2d6-42fa-a44f-cfdfb8f449ef" name="Changes" comment="" />
+    <list default="true" id="e55f8b87-c2d6-42fa-a44f-cfdfb8f449ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/poo/poo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/poo/poo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectTest/Controle/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectTest/Controle/Jogo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,8 +49,8 @@
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Marista/Desktop/Kai/poo",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager">

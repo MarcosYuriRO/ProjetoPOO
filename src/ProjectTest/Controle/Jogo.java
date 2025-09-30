@@ -112,7 +112,7 @@ public class Jogo {
                                   - Nome no Passaporte não coincide com o dito pelo imigrante;
                             
                             """);
-                System.out.println("Data atual: " + dataAtual);
+                    System.out.println("Data atual: " + dataAtual);
                     break;
 
                 case "P":
@@ -147,7 +147,7 @@ public class Jogo {
                     System.out.println("Opção inserida é inválida!");
 
             }
-        } while (!decisaoTomada) ; //Continua até que A ou N seja escolhida
+        } while (!decisaoTomada); //Continua até que A ou N seja escolhida
     }
 
     private void finalizarDia() {
@@ -157,7 +157,7 @@ public class Jogo {
 
         //Exibir dinheiro recebido no dia e dinheiro total
         ganhosDiario = acertos * PAGAMENTO_POR_ACERTO;
-        System.out.println("\n Ganhos do dia: " + ganhosDiario);
+        System.out.println("\nGanhos do dia: " + ganhosDiario);
         perdasDiarias = erros * CUSTO_POR_ERRO + CUSTO_DIARIO_FIXO;
         System.out.println("Gastos do dia: " + perdasDiarias);
         saldo += (ganhosDiario - perdasDiarias);
@@ -180,19 +180,20 @@ public class Jogo {
         avancarProximoDia();
 
     }
-    private void avancarProximoDia () {
-         System.out.println("O dia acabou...\n Mas um novo dia está para começar!");
 
-         //Arruma os contadores e avança o dia
-         diaAtual++;
-         acertos = 0;
-         erros = 0;
+    private void avancarProximoDia() {
+        System.out.println("O dia acabou...\n Mas um novo dia está para começar!");
 
-         //Inicia um novo dia
-         iniciarDia();
+        //Arruma os contadores e avança o dia
+        diaAtual++;
+        acertos = 0;
+        erros = 0;
+
+        //Inicia um novo dia
+        iniciarDia();
     }
 
-    private void finalizarJogo(){
+    private void finalizarJogo() {
     /*if (diaAtual >= DIA_LIMITE ) {
     } else {
     }*/
@@ -201,27 +202,35 @@ public class Jogo {
     }
 
     private void processarDecisao(Imigrante imigrante, boolean aceitou) {
-          boolean legal = verificarLegalidade(imigrante);
-          boolean acertou = (aceitou && legal) || (!aceitou && !legal);
+        boolean legal = verificarLegalidade(imigrante);
+        boolean acertou = (aceitou && legal) || (!aceitou && !legal);
 
-          if (acertou) {
-              acertos++;
-              System.out.println("✅ Você acertou! Ganhos contabilizados.");
-          } else {
-              erros++;
-              System.out.println("❌ Você errou! Perdas contabilizadas.");
-          }
+        if (acertou) {
+            acertos++;
+            System.out.println("✅ Você acertou! Ganhos contabilizados.");
+        } else {
+            erros++;
+            System.out.println("❌ Você errou! Perdas contabilizadas.");
         }
+    }
 
     //Insere o imigrante instanciado. caso a validade não esteja vencida e o nome e a idade coincidam com os ditos, retorna true. Se não, false
     public boolean verificarLegalidade(Imigrante dadosImigrante) {
-         if(dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("identidade").getNomeCompleto()) &&
-               dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("passaporte").getNomeCompleto()) && dadosImigrante.getDocumentoPorTipo("identidade").estaValido(LocalDate.now()) && dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(LocalDate.now())) {
-                return true;
-            } else {
-                return false;
-            }
+        Passaporte passaporte = (Passaporte) dadosImigrante.getDocumentoPorTipo("passaporte");
+        Identidade identidade = (Identidade) dadosImigrante.getDocumentoPorTipo("identidade");
+
+        if (passaporte == null || identidade == null) {
+            //Documento não está aqui, corrige o erro do terminal
+            return false;
         }
 
+        boolean nomeEstaCerto = dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("identidade").getNomeCompleto()) &&
+                dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("passaporte").getNomeCompleto());
 
+        boolean docsEstaoValidos = dadosImigrante.getDocumentoPorTipo("identidade").estaValido(LocalDate.now()) && dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(LocalDate.now());
+
+        return nomeEstaCerto && docsEstaoValidos;
+
+
+    }
 }
