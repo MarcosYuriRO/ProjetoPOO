@@ -27,7 +27,7 @@ public class Imigrante {
 
     //Métodos
     public void dialogo() {
-        System.out.println("Olá, meu nome é " + nome + " e sou de " + nacionalidadeReal + ".");
+        System.out.println("\n'Olá! Meu nome é " + nome + " e sou de " + nacionalidadeReal + ".'\n");
     }
 
     public Documento getDocumentoPorTipo(String tipo) {
