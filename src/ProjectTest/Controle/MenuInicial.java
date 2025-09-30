@@ -22,7 +22,7 @@ public class MenuInicial {
             switch (opcao) {
                 case 1:
                     System.out.println("""
-                            Cá está você em mais uma fria manhã de trabalho. 
+                            Cá está você em mais uma fria manhã de trabalho em 198
                             Você adentra à fronteira pelo lado de dentro, mas já vendo 
                             uma enorme fila de imigrantes que buscam adentrar ao seu país.
                             Sabendo disso, está na hora de você checar seus documentos

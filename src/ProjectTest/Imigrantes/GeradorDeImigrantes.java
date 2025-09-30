@@ -92,8 +92,6 @@ public class GeradorDeImigrantes {
                     deveSerAceito = false;
                 }
 
-                // Não adicionamos nenhum objeto à lista de documentos, simulando a falta.
-                System.out.println("  ERRO! - Identidade ausente.");
             }
 
             // Retorna o objeto Imigrante totalmente construído

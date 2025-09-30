@@ -51,6 +51,7 @@ public class Jogo {
 
         //Se sai do loop, quer dizer que acabou algo (tempo ou dinhero)
         finalizarJogo();
+        return;
     }
 
     private void iniciarDia() {
@@ -90,7 +91,7 @@ public class Jogo {
             }
 
             System.out.println("""
-                        [R] - Regras;
+                        [R] - Regras (Checar Data);
                         [P] - Passaporte;
                         [I] - Identidade;
                         [A] - Aceitar Entrada;
@@ -106,10 +107,8 @@ public class Jogo {
                                 Documentos Obrigatórios para todas Nacionalidades:
                                 - Identidade:
                                   - Nome da Identidade diferente com o nome ditado pelo imigrante;
-                                  - Verificar a Data de Validade;
                             
                                 - Passaporte:
-                                  - Checar data de validade do documento;
                                   - Nome no Passaporte não coincide com o dito pelo imigrante;
                             
                             """);
@@ -198,6 +197,7 @@ public class Jogo {
 
         System.out.println("FIM DE JOGO: Arstotzka agradece seus serviços");
         System.out.println("Saldo final: " + saldo);
+        return;
     }
 
     private void processarDecisao(Imigrante imigrante, boolean aceitou) {
