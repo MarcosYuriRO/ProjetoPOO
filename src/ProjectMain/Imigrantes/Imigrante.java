@@ -1,6 +1,6 @@
-package ProjectTest.Imigrantes;
+package ProjectMain.Imigrantes;
 
-import ProjectTest.Documentos.Documento;
+import ProjectMain.Documentos.Documento;
 
 import java.util.List;
 

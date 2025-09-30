@@ -1,8 +1,8 @@
-package ProjectTest.Imigrantes;
+package ProjectMain.Imigrantes;
 
-import ProjectTest.Documentos.Documento;
-import ProjectTest.Documentos.Identidade;
-import ProjectTest.Documentos.Passaporte;
+import ProjectMain.Documentos.Documento;
+import ProjectMain.Documentos.Identidade;
+import ProjectMain.Documentos.Passaporte;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

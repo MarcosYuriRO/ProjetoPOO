@@ -1,9 +1,9 @@
-package ProjectTest.Controle;
+package ProjectMain.Controle;
 
-import ProjectTest.Documentos.Identidade;
-import ProjectTest.Documentos.Passaporte;
-import ProjectTest.Imigrantes.GeradorDeImigrantes;
-import ProjectTest.Imigrantes.Imigrante;
+import ProjectMain.Documentos.Identidade;
+import ProjectMain.Documentos.Passaporte;
+import ProjectMain.Imigrantes.GeradorDeImigrantes;
+import ProjectMain.Imigrantes.Imigrante;
 
 import java.time.LocalDate;
 import java.util.Scanner;

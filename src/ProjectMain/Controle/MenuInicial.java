@@ -1,4 +1,4 @@
-package ProjectTest.Controle;
+package ProjectMain.Controle;
 
 import java.util.Scanner;
 
