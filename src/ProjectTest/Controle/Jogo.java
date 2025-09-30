@@ -226,8 +226,8 @@ public class Jogo {
         boolean nomeEstaCerto = dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("identidade").getNomeCompleto()) &&
                 dadosImigrante.getNome().equals(dadosImigrante.getDocumentoPorTipo("passaporte").getNomeCompleto());
 
-        boolean docsEstaoValidos = dadosImigrante.getDocumentoPorTipo("identidade").estaValido(LocalDate.now()) &&
-                dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(LocalDate.now());
+        boolean docsEstaoValidos = dadosImigrante.getDocumentoPorTipo("identidade").estaValido(dataAtual) &&
+                dadosImigrante.getDocumentoPorTipo("passaporte").estaValido(dataAtual);
 
         return nomeEstaCerto && docsEstaoValidos;
 
