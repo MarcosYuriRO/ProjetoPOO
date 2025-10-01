@@ -111,9 +111,11 @@ public class Jogo {
                                 Documentos Obrigatórios para todas as nacionalidades:
                                 - Identidade:
                                   - Nome da Identidade diferente com o nome ditado pelo imigrante;
+                                  - Verificar expiração do documento;
                             
                                 - Passaporte:
                                   - Nome no Passaporte não coincide com o dito pelo imigrante;
+                                  - Verificar expiração do documento;
                             
                             """);
                     System.out.println("Data atual: " + dataAtual);
