@@ -59,7 +59,7 @@ public class Jogo {
     }
 
     private void iniciarDia() {
-        //TIMER 60S
+        //TIMER 90S
         long tempoInicial = System.currentTimeMillis();
         long tempoLimite = tempoInicial + TEMPO_LIMITE;//Quando o dia acabaa
 
